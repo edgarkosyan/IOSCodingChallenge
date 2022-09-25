@@ -11,7 +11,6 @@ struct FetchedData: Codable {
     let products: [Product]
 }
 
-// MARK: - Product
 struct Product: Codable, Identifiable {
     let id: String?
     let productName: String?

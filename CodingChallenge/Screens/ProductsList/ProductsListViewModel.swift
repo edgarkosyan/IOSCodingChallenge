@@ -54,7 +54,7 @@ class ProductsListViewModel: ObservableObject {
             }.store(in: &bag)
     }
     
-    private func filterData(value: String) -> [Product] {
+    func filterData(value: String) -> [Product] {
         self.products.filter { product in
             if let brandName = product.brandName, let productName = product.productName, let category = product.productCategory {
                 if brandName.lowercased().contains(value) || productName.lowercased().contains(value) || category.lowercased().contains(value) {

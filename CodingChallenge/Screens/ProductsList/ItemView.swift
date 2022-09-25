@@ -9,15 +9,12 @@ import SwiftUI
 
 struct ItemView: View {
     var product: Product
-    let col = Color(#colorLiteral(red: 0, green: 1, blue: 0.8045933843, alpha: 1))
-    let gradient = Gradient(colors: [.green, .yellow, .orange, .red])
     var body: some View {
         HStack(alignment: .top) {
             VStack {
                 Spacer()
                 ImageView(urlString: product.imageURLSmall)
                     .frame(width: 130, height: 130)
-                
                 Spacer()
             }
             .background(Color.white)
@@ -45,8 +42,8 @@ struct ItemView: View {
                     HStack(spacing: 2) {
                         starsView
                             .overlay (
-                               overlayView
-                                .mask(starsView)
+                                overlayView
+                                    .mask(starsView)
                             )
                         Text("(\(String(format: "%.1f", hazardRate(rating: Double(product.hazardRating ?? 0)))))")
                             .font(.caption)
@@ -58,8 +55,7 @@ struct ItemView: View {
             Spacer()
         }
         .frame(height: 150)
-        .background(LinearGradient(colors: [.pink, .pink.opacity(0.3), col], startPoint: .leading, endPoint: .trailing).opacity(0.2))
-        
+        .background(Color.itemGradientColor.opacity(0.2))
         .cornerRadius(7)
     }
     
@@ -80,7 +76,7 @@ struct ItemView: View {
             }
         }
     }
-
+    
     func hazardRate(rating: Double) -> Double {
         return 5 * starsFillValue(rating: rating)
     }

@@ -30,7 +30,6 @@ struct ProductsListView: View {
                             .background(Color.white
                                 .cornerRadius(7)
                                 .shadow(color: .gray.opacity(0.3), radius: 3, x: -2, y: -2)
-                                        
                             )
                             .padding()
                     }
