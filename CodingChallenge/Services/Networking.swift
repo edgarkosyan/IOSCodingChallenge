@@ -40,6 +40,4 @@ class Networking: NetworkingProtocol {
             throw error
         }
     }
-    
-    
 }
